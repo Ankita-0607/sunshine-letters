@@ -1,0 +1,18 @@
+{
+  "name": "From Ankita 🌸",
+  "short_name": "From Ankita",
+  "description": "A warm little corner, just for Sanskriti",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f7efe4",
+  "theme_color": "#f7efe4",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' rx='44' fill='%23f7efe4'/><text y='138' x='18' font-size='148'>🌸</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
