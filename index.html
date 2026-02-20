@@ -1,1562 +1,1541 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="From Ankita 🌸" />
-  <meta name="theme-color" content="#f7efe4" />
-  <title>From Ankita 🌸</title>
-  <link rel="manifest" href="manifest.json" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta name="apple-mobile-web-app-title" content="From Ankita 🌸" />
+    <meta name="theme-color" content="#f7efe4" />
+    <title>From Ankita 🌸</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,500;1,300;1,500&family=Nunito:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <style>
-    :root {
-      --parchment:  #f7efe4;
-      --linen:      #ede0cc;
-      --biscuit:    #dcc9ad;
-      --cinnamon:   #c4874f;
-      --terracotta: #b5633a;
-      --bark:       #7a4423;
-      --ink:        #3d2010;
-      --ink-light:  #9c7455;
-      --cream-card: #fdf7ef;
-      --shadow:     rgba(61,32,16,0.10);
-    }
+    <style>
+      :root {
+        --parchment: #f7efe4;
+        --linen: #ede0cc;
+        --biscuit: #dcc9ad;
+        --cinnamon: #c4874f;
+        --terracotta: #b5633a;
+        --bark: #7a4423;
+        --ink: #3d2010;
+        --ink-light: #9c7455;
+        --white: #fffcf7;
+        --cream-card: #fdf7ef;
+        --shadow: rgba(61, 32, 16, 0.1);
+      }
 
-    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
-    html { height: -webkit-fill-available; }
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+      }
+      html {
+        height: -webkit-fill-available;
+      }
 
-    body {
-      font-family: 'Nunito', sans-serif;
-      background: var(--parchment);
-      color: var(--ink);
-      min-height: 100vh;
-      min-height: -webkit-fill-available;
-      overflow-x: hidden;
-    }
+      body {
+        font-family: 'Nunito', sans-serif;
+        background: var(--parchment);
+        color: var(--ink);
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+        overflow-x: hidden;
+      }
 
-    /* Paper grain */
-    body::after {
-      content: '';
-      position: fixed; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none; z-index: 9999; opacity: 0.5;
-    }
+      /* Paper grain */
+      body::after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 9999;
+        opacity: 0.5;
+      }
 
-    body::before {
-      content: '';
-      position: fixed; inset: 0;
-      background:
-        radial-gradient(ellipse 70% 50% at 15% 10%, rgba(196,135,79,0.18) 0%, transparent 60%),
-        radial-gradient(ellipse 60% 60% at 85% 85%, rgba(181,99,58,0.12) 0%, transparent 55%);
-      z-index: 0;
-    }
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 70% 50% at 15% 10%,
+            rgba(196, 135, 79, 0.18) 0%,
+            transparent 60%
+          ),
+          radial-gradient(
+            ellipse 60% 60% at 85% 85%,
+            rgba(181, 99, 58, 0.12) 0%,
+            transparent 55%
+          );
+        z-index: 0;
+      }
 
-    /* ── LAYOUT ── */
-    .app {
-      position: relative; z-index: 1;
-      max-width: 430px; margin: 0 auto;
-      min-height: 100vh;
-      display: flex; flex-direction: column;
-      padding-top: env(safe-area-inset-top, 16px);
-      padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px));
-    }
+      /* ── LAYOUT ── */
+      .app {
+        position: relative;
+        z-index: 1;
+        max-width: 430px;
+        margin: 0 auto;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding-top: env(safe-area-inset-top, 16px);
+        padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+      }
 
-    /* ── HEADER ── */
-    .header { padding: 24px 28px 14px; }
+      /* ── HEADER ── */
+      .header {
+        padding: 24px 28px 14px;
+      }
 
-    .time-greeting {
-      font-size: 10px; font-weight: 700;
-      letter-spacing: 2.5px; text-transform: uppercase;
-      color: var(--cinnamon); margin-bottom: 4px;
-    }
+      .time-greeting {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2.5px;
+        text-transform: uppercase;
+        color: var(--cinnamon);
+        margin-bottom: 4px;
+      }
 
-    .header-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 30px; font-weight: 300; color: var(--ink); line-height: 1.1;
-    }
+      .header-name {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 30px;
+        font-weight: 300;
+        color: var(--ink);
+        line-height: 1.1;
+      }
 
-    .header-name em { font-style: italic; color: var(--terracotta); }
+      .header-name em {
+        font-style: italic;
+        color: var(--terracotta);
+      }
 
-    .header-rule {
-      height: 1px; margin-top: 14px;
-      background: linear-gradient(to right, var(--biscuit), transparent);
-    }
+      .header-rule {
+        height: 1px;
+        margin-top: 14px;
+        background: linear-gradient(to right, var(--biscuit), transparent);
+      }
 
-    /* ── BOTTOM NAV ── */
-    .bottom-nav {
-      position: fixed; bottom: 0; left: 50%; transform: translateX(-50%);
-      width: 100%; max-width: 430px;
-      padding: 10px 20px calc(10px + env(safe-area-inset-bottom, 0px));
-      background: rgba(247,239,228,0.94);
-      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-      border-top: 1px solid var(--linen);
-      display: flex; justify-content: space-around; z-index: 100;
-    }
+      /* ── BOTTOM NAV ── */
+      .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 430px;
+        padding: 10px 20px calc(10px + env(safe-area-inset-bottom, 0px));
+        background: rgba(247, 239, 228, 0.94);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border-top: 1px solid var(--linen);
+        display: flex;
+        justify-content: space-around;
+        z-index: 100;
+      }
 
-    .nav-btn {
-      flex: 1; display: flex; flex-direction: column;
-      align-items: center; gap: 3px;
-      background: none; border: none; cursor: pointer;
-      padding: 6px 4px; border-radius: 14px; transition: background 0.2s;
-    }
-    .nav-btn:active { background: var(--linen); }
-    .nav-icon { font-size: 20px; transition: transform 0.2s; }
-    .nav-label {
-      font-size: 9px; font-weight: 600; letter-spacing: 1px;
-      text-transform: uppercase; color: var(--ink-light); transition: color 0.2s;
-    }
-    .nav-btn.active .nav-icon { transform: scale(1.15); }
-    .nav-btn.active .nav-label { color: var(--terracotta); font-weight: 700; }
+      .nav-btn {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 3px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px 4px;
+        border-radius: 14px;
+        transition: background 0.2s;
+      }
 
-    /* ── SCREENS ── */
-    .screen { display: none; flex: 1; padding: 8px 20px 24px; flex-direction: column; gap: 18px; }
-    .screen.active { display: flex; animation: screenIn 0.35s cubic-bezier(0.22,1,0.36,1); }
+      .nav-btn:active {
+        background: var(--linen);
+      }
+      .nav-icon {
+        font-size: 20px;
+        transition: transform 0.2s;
+      }
+      .nav-label {
+        font-size: 9px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--ink-light);
+        transition: color 0.2s;
+      }
 
-    @keyframes screenIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
+      .nav-btn.active .nav-icon {
+        transform: scale(1.15);
+      }
+      .nav-btn.active .nav-label {
+        color: var(--terracotta);
+        font-weight: 700;
+      }
 
-    /* ── CARDS ── */
-    .card { background: var(--cream-card); border-radius: 22px; box-shadow: 0 2px 0 var(--linen), 0 6px 24px var(--shadow); }
-    .card-inner { padding: 24px; }
-    .card-tag {
-      font-size: 9px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--cinnamon); margin-bottom: 10px; display: block;
-    }
+      /* ── SCREENS ── */
+      .screen {
+        display: none;
+        flex: 1;
+        padding: 8px 20px 24px;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .screen.active {
+        display: flex;
+        animation: screenIn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+      }
 
-    /* ── AFFIRMATION ── */
-    .affirmation-card { position: relative; overflow: hidden; }
-    .affirmation-deco {
-      position: absolute; top: -12px; right: 16px;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 130px; color: var(--linen);
-      line-height: 1; pointer-events: none; user-select: none;
-    }
-    .affirmation-text {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 22px; font-style: italic; font-weight: 300;
-      line-height: 1.6; color: var(--ink); position: relative; z-index: 1;
-    }
-    .affirmation-from { margin-top: 14px; font-size: 12px; color: var(--cinnamon); font-style: italic; }
+      @keyframes screenIn {
+        from {
+          opacity: 0;
+          transform: translateY(10px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
 
-    /* ── MOOD GRID ── */
-    .mood-section-title {
-      font-size: 10px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--ink-light); margin-bottom: 12px;
-    }
+      /* ── CARDS ── */
+      .card {
+        background: var(--cream-card);
+        border-radius: 22px;
+        box-shadow:
+          0 2px 0 var(--linen),
+          0 6px 24px var(--shadow);
+      }
 
-    .mood-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 9px; }
+      .card-inner {
+        padding: 24px;
+      }
+      .card-tag {
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--cinnamon);
+        margin-bottom: 10px;
+        display: block;
+      }
 
-    .mood-tile {
-      background: var(--cream-card); border: 1.5px solid var(--linen);
-      border-radius: 18px; padding: 14px 8px;
-      display: flex; flex-direction: column; align-items: center; gap: 6px;
-      cursor: pointer; transition: all 0.2s cubic-bezier(0.34,1.56,0.64,1);
-      box-shadow: 0 2px 0 var(--linen);
-    }
-    .mood-tile:active { transform: scale(0.95); }
-    .mood-tile.selected {
-      border-color: var(--terracotta); background: rgba(181,99,58,0.07);
-      box-shadow: 0 0 0 3px rgba(181,99,58,0.12); transform: scale(1.04);
-    }
-    .mood-emoji { font-size: 26px; }
-    .mood-word { font-size: 10px; font-weight: 700; letter-spacing: 0.5px; color: var(--ink-light); text-align: center; }
-    .mood-tile.selected .mood-word { color: var(--terracotta); }
+      /* ── HOME: AFFIRMATION ── */
+      .affirmation-card {
+        position: relative;
+        overflow: hidden;
+      }
 
-    /* ── MOOD RESPONSE ── */
-    .mood-response { display: none; animation: moodReveal 0.45s cubic-bezier(0.22,1,0.36,1); }
-    .mood-response.show { display: block; }
+      .affirmation-deco {
+        position: absolute;
+        top: -12px;
+        right: 16px;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 130px;
+        color: var(--linen);
+        line-height: 1;
+        pointer-events: none;
+        user-select: none;
+      }
 
-    @keyframes moodReveal {
-      from { opacity: 0; transform: translateY(14px) scale(0.97); }
-      to   { opacity: 1; transform: translateY(0) scale(1); }
-    }
+      .affirmation-text {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 22px;
+        font-style: italic;
+        font-weight: 300;
+        line-height: 1.6;
+        color: var(--ink);
+        position: relative;
+        z-index: 1;
+      }
 
-    /* skeleton loader */
-    .skeleton {
-      border-radius: 22px; overflow: hidden;
-      box-shadow: 0 2px 0 var(--linen), 0 6px 24px var(--shadow);
-      background: var(--cream-card);
-    }
-    .skeleton-img {
-      width: 100%; aspect-ratio: 4/3;
-      background: linear-gradient(90deg, var(--linen) 25%, var(--biscuit) 50%, var(--linen) 75%);
-      background-size: 200% 100%;
-      animation: shimmer 1.4s infinite;
-    }
-    .skeleton-lines { padding: 20px; display: flex; flex-direction: column; gap: 10px; }
-    .skeleton-line {
-      height: 14px; border-radius: 7px;
-      background: linear-gradient(90deg, var(--linen) 25%, var(--biscuit) 50%, var(--linen) 75%);
-      background-size: 200% 100%; animation: shimmer 1.4s infinite;
-    }
-    .skeleton-line.short { width: 55%; }
+      .affirmation-from {
+        margin-top: 14px;
+        font-size: 12px;
+        color: var(--cinnamon);
+        font-style: italic;
+      }
 
-    @keyframes shimmer { to { background-position: -200% 0; } }
+      /* ── HOME: MOOD ── */
+      .mood-section-title {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--ink-light);
+        margin-bottom: 12px;
+      }
 
-    /* photo response */
-    .photo-response { border-radius: 22px; overflow: hidden; box-shadow: 0 2px 0 var(--linen), 0 8px 32px var(--shadow); }
-    .photo-response-img {
-      width: 100%; aspect-ratio: 4/3;
-      background: linear-gradient(135deg, var(--linen), var(--biscuit));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 80px; overflow: hidden;
-    }
-    .photo-response-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    .photo-response-body { background: var(--cream-card); padding: 20px 22px 22px; }
-    .photo-response-caption {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 19px; font-style: italic; font-weight: 300; color: var(--ink); line-height: 1.6;
-    }
-    .photo-response-from { margin-top: 10px; font-size: 11px; color: var(--cinnamon); }
+      .mood-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 9px;
+      }
 
-    /* audio response */
-    .audio-response { background: var(--cream-card); border-radius: 22px; box-shadow: 0 2px 0 var(--linen), 0 8px 32px var(--shadow); overflow: hidden; }
-    .audio-header { padding: 22px 22px 16px; }
-    .audio-response-label { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--cinnamon); margin-bottom: 8px; }
-    .audio-response-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; font-weight: 300; color: var(--ink); line-height: 1.45; }
-    .audio-player-bar { background: var(--linen); padding: 16px 22px 20px; display: flex; align-items: center; gap: 14px; }
-    .audio-play-btn {
-      width: 48px; height: 48px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--cinnamon), var(--terracotta));
-      border: none; color: white; display: flex; align-items: center; justify-content: center;
-      font-size: 15px; cursor: pointer; flex-shrink: 0;
-      box-shadow: 0 4px 14px rgba(181,99,58,0.4); transition: transform 0.15s;
-    }
-    .audio-play-btn:active { transform: scale(0.9); }
-    .waveform { display: flex; align-items: center; gap: 2.5px; height: 32px; flex: 1; }
-    .wbar { width: 3px; background: var(--biscuit); border-radius: 2px; transition: background 0.3s; }
-    .audio-response.playing .wbar { background: var(--cinnamon); animation: waveAnim 0.8s ease-in-out infinite alternate; }
-    .audio-response.playing .wbar:nth-child(1) { animation-delay: 0.00s; }
-    .audio-response.playing .wbar:nth-child(2) { animation-delay: 0.10s; }
-    .audio-response.playing .wbar:nth-child(3) { animation-delay: 0.20s; }
-    .audio-response.playing .wbar:nth-child(4) { animation-delay: 0.30s; }
-    .audio-response.playing .wbar:nth-child(5) { animation-delay: 0.15s; }
-    .audio-response.playing .wbar:nth-child(6) { animation-delay: 0.05s; }
-    .audio-response.playing .wbar:nth-child(7) { animation-delay: 0.25s; }
-    .audio-response.playing .wbar:nth-child(8) { animation-delay: 0.35s; }
-    @keyframes waveAnim { from { height: 4px; } to { height: 26px; } }
-    .audio-duration { font-size: 11px; color: var(--ink-light); flex-shrink: 0; }
+      .mood-tile {
+        background: var(--cream-card);
+        border: 1.5px solid var(--linen);
+        border-radius: 18px;
+        padding: 14px 8px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+        transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        box-shadow: 0 2px 0 var(--linen);
+      }
 
-    /* text/message response */
-    .text-response {
-      background: linear-gradient(135deg, var(--terracotta), var(--bark));
-      border-radius: 22px; padding: 24px 24px 26px;
-      box-shadow: 0 6px 30px rgba(122,68,35,0.3); color: white;
-    }
-    .text-response-tag { font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; opacity: 0.65; margin-bottom: 10px; }
-    .text-response-emoji { font-size: 32px; margin-bottom: 10px; display: block; }
-    .text-response-msg { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-style: italic; font-weight: 300; line-height: 1.6; opacity: 0.95; }
-    .text-response-from { margin-top: 12px; font-size: 11px; opacity: 0.6; }
+      .mood-tile:active {
+        transform: scale(0.95);
+      }
 
-    /* error state */
-    .error-nudge {
-      background: var(--cream-card); border-radius: 20px;
-      padding: 20px 22px; text-align: center;
-      box-shadow: 0 2px 0 var(--linen), 0 4px 16px var(--shadow);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 17px; font-style: italic; color: var(--ink-light); line-height: 1.6;
-    }
+      .mood-tile.selected {
+        border-color: var(--terracotta);
+        background: rgba(181, 99, 58, 0.07);
+        box-shadow: 0 0 0 3px rgba(181, 99, 58, 0.12);
+        transform: scale(1.04);
+      }
 
-    /* ── HUG ── */
-    .hug-section { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 6px 0; }
-    .hug-label { font-size: 10px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--ink-light); }
-    .hug-btn-wrap { position: relative; display: flex; align-items: center; justify-content: center; }
-    .hug-ring { position: absolute; border-radius: 50%; border: 2px solid var(--cinnamon); opacity: 0; animation: hugRing 3s ease-out infinite; }
-    .hug-ring:nth-child(1) { width: 175px; height: 175px; animation-delay: 0s; }
-    .hug-ring:nth-child(2) { width: 205px; height: 205px; animation-delay: 1s; }
-    .hug-ring:nth-child(3) { width: 235px; height: 235px; animation-delay: 2s; }
-    @keyframes hugRing { 0% { opacity:0; transform:scale(0.88); } 30% { opacity:0.3; } 100% { opacity:0; transform:scale(1.04); } }
-    .hug-btn {
-      width: 140px; height: 140px; border-radius: 50%; border: none;
-      background: radial-gradient(circle at 38% 32%, #f5c49a, var(--cinnamon) 55%, var(--terracotta));
-      box-shadow: inset 0 -4px 12px rgba(0,0,0,0.15), inset 0 4px 10px rgba(255,255,255,0.18), 0 8px 40px rgba(181,99,58,0.45), 0 0 0 6px rgba(196,135,79,0.15);
-      font-size: 50px; display: flex; align-items: center; justify-content: center;
-      cursor: pointer; position: relative; z-index: 1;
-      transition: transform 0.18s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.2s;
-    }
-    .hug-btn:active { transform: scale(0.87); box-shadow: 0 4px 20px rgba(181,99,58,0.3); }
-    .hug-response-text {
-      display: none;
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 17px; font-style: italic; font-weight: 300;
-      color: var(--ink); text-align: center; line-height: 1.6;
-      padding: 16px 20px; background: var(--cream-card); border-radius: 18px;
-      box-shadow: 0 2px 0 var(--linen), 0 4px 16px var(--shadow);
-    }
-    .hug-response-text.show { display: block; animation: hugPop 0.4s cubic-bezier(0.34,1.56,0.64,1); }
-    @keyframes hugPop { from { opacity:0; transform:scale(0.85) translateY(8px); } to { opacity:1; transform:scale(1) translateY(0); } }
+      .mood-emoji {
+        font-size: 26px;
+      }
+      .mood-word {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        color: var(--ink-light);
+        text-align: center;
+      }
 
-    /* ── JOURNAL ── */
-    .journal-hero { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: var(--ink); line-height: 1.3; }
-    .journal-hero em { font-style: italic; color: var(--terracotta); }
-    .journal-sub { font-size: 12px; color: var(--ink-light); margin-top: 6px; line-height: 1.65; }
-    .journal-area {
-      width: 100%; background: var(--cream-card);
-      border: 1.5px solid var(--linen); border-radius: 20px;
-      padding: 20px; font-family: 'Nunito', sans-serif;
-      font-size: 15px; font-weight: 300; color: var(--ink);
-      line-height: 1.75; resize: none; min-height: 180px; outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s; box-shadow: 0 2px 0 var(--linen);
-    }
-    .journal-area:focus { border-color: var(--cinnamon); box-shadow: 0 0 0 3px rgba(196,135,79,0.12); }
-    .journal-area::placeholder { color: var(--ink-light); font-style: italic; }
-    .save-btn {
-      width: 100%; padding: 17px;
-      background: linear-gradient(135deg, var(--cinnamon), var(--terracotta));
-      border: none; border-radius: 18px; color: white;
-      font-family: 'Nunito', sans-serif; font-size: 14px; font-weight: 700;
-      letter-spacing: 0.5px; cursor: pointer;
-      box-shadow: 0 6px 24px rgba(181,99,58,0.4); transition: transform 0.15s, box-shadow 0.15s;
-    }
-    .save-btn:active { transform: scale(0.98); box-shadow: 0 3px 12px rgba(181,99,58,0.3); }
+      .mood-tile.selected .mood-word {
+        color: var(--terracotta);
+      }
 
-    /* ── EMOJI JOURNAL ── */
-    .emoji-section-label {
-      font-size: 10px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--ink-light); margin-bottom: 12px;
-    }
-    .emoji-category { margin-bottom: 16px; }
-    .emoji-category-name {
-      font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
-      text-transform: uppercase; color: var(--biscuit); margin-bottom: 8px;
-    }
-    .emoji-row { display: flex; flex-wrap: wrap; gap: 8px; }
-    .emoji-btn {
-      width: 46px; height: 46px; border-radius: 14px;
-      background: var(--cream-card); border: 1.5px solid var(--linen);
-      font-size: 22px; cursor: pointer;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 2px 0 var(--linen);
-      transition: transform 0.15s cubic-bezier(0.34,1.56,0.64,1), border-color 0.15s;
-    }
-    .emoji-btn:active { transform: scale(0.85); }
-    .emoji-btn.selected {
-      border-color: var(--cinnamon);
-      background: rgba(196,135,79,0.10);
-      box-shadow: 0 0 0 3px rgba(196,135,79,0.15);
-      transform: scale(1.1);
-    }
-    .selected-emojis-wrap {
-      min-height: 38px; display: flex; align-items: center;
-      gap: 6px; flex-wrap: wrap;
-    }
-    .selected-emojis-label { font-size: 11px; color: var(--ink-light); font-style: italic; }
-    .selected-emoji-tag {
-      display: inline-flex; align-items: center; gap: 4px;
-      background: var(--cream-card); border: 1.5px solid var(--linen);
-      border-radius: 50px; padding: 4px 10px 4px 6px;
-      font-size: 16px; box-shadow: 0 1px 0 var(--linen);
-      animation: tagPop 0.25s cubic-bezier(0.34,1.56,0.64,1);
-    }
-    @keyframes tagPop { from { opacity:0; transform:scale(0.7); } to { opacity:1; transform:scale(1); } }
-    .remove-emoji {
-      font-size: 10px; color: var(--ink-light); cursor: pointer;
-      background: none; border: none; padding: 0; line-height: 1;
-    }
-    .write-nudge {
-      font-size: 12px; color: var(--cinnamon); font-style: italic;
-      text-align: center; opacity: 0; transition: opacity 0.5s; min-height: 18px;
-    }
-    .write-nudge.show { opacity: 1; }
-    .admin-emojis { font-size: 26px; letter-spacing: 3px; margin-bottom: 8px; }
-    .admin-entry-type {
-      font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-    }
-    .admin-entry-type.emoji-only { color: var(--cinnamon); }
-    .admin-entry-type.text-only  { color: var(--terracotta); }
-    .admin-entry-type.both       { color: var(--bark); }
+      /* ── MOOD RESPONSE ── */
+      .mood-response {
+        display: none;
+        animation: moodReveal 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+      }
 
-    /* ── TOAST ── */
-    .toast {
-      position: fixed; bottom: 96px; left: 50%;
-      transform: translateX(-50%) translateY(14px);
-      background: var(--bark); color: white;
-      padding: 12px 24px; border-radius: 50px;
-      font-size: 13px; font-weight: 600; letter-spacing: 0.3px;
-      opacity: 0; pointer-events: none; z-index: 1000;
-      transition: all 0.3s; white-space: nowrap;
-    }
-    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+      .mood-response.show {
+        display: block;
+      }
 
-    /* ── ADMIN ── */
-    .admin-overlay {
-      display: none; position: fixed; inset: 0;
-      background: var(--parchment); z-index: 800; overflow-y: auto;
-      animation: fadeIn 0.25s;
-      padding: env(safe-area-inset-top, 20px) 0 env(safe-area-inset-bottom, 20px);
-    }
-    .admin-overlay.show { display: block; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .admin-header { padding: 24px 24px 16px; border-bottom: 1px solid var(--linen); display: flex; justify-content: space-between; align-items: center; }
-    .admin-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 500; }
-    .admin-close { background: var(--linen); border: none; border-radius: 50%; width: 36px; height: 36px; font-size: 16px; cursor: pointer; color: var(--bark); }
-    .admin-body { padding: 20px; }
-    .admin-entry { background: var(--cream-card); border-radius: 18px; padding: 20px; margin-bottom: 14px; box-shadow: 0 2px 0 var(--linen), 0 4px 16px var(--shadow); }
-    .admin-entry-meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-    .admin-time { font-size: 11px; color: var(--ink-light); }
-    .admin-text { font-family: 'Cormorant Garamond', serif; font-size: 17px; font-style: italic; color: var(--ink); line-height: 1.65; }
-    .admin-empty { text-align: center; color: var(--ink-light); font-style: italic; padding: 48px 20px; font-family: 'Cormorant Garamond', serif; font-size: 18px; line-height: 1.7; }
+      @keyframes moodReveal {
+        from {
+          opacity: 0;
+          transform: translateY(14px) scale(0.97);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
 
-    /* ── PARTICLES ── */
-    .particle { position: fixed; pointer-events: none; z-index: 9000; animation: particleFloat 1.8s ease-out forwards; font-size: 20px; }
-    @keyframes particleFloat { 0% { opacity:1; transform:translate(0,0) scale(1) rotate(0deg); } 100% { opacity:0; transform:translate(var(--tx),var(--ty)) scale(0.2) rotate(var(--rot)); } }
+      /* Photo response */
+      .photo-response {
+        border-radius: 22px;
+        overflow: hidden;
+        box-shadow:
+          0 2px 0 var(--linen),
+          0 8px 32px var(--shadow);
+      }
 
-    /* ── INSTALL HINT ── */
-    .install-hint {
-      margin: -6px 20px 4px; background: var(--cream-card); border-radius: 18px;
-      padding: 16px 18px; box-shadow: 0 2px 0 var(--linen), 0 4px 14px var(--shadow);
-      display: none; gap: 12px; align-items: flex-start;
-      font-size: 12px; color: var(--ink-light); line-height: 1.6;
-    }
-    .install-hint.show { display: flex; }
-    .install-hint-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
-    .install-hint strong { color: var(--terracotta); display: block; margin-bottom: 2px; font-size: 13px; }
-    .dismiss-hint { display: none; width: 100%; padding: 10px; background: none; border: none; color: var(--ink-light); font-size: 12px; text-align: center; cursor: pointer; font-family: 'Nunito', sans-serif; }
-    .dismiss-hint.show { display: block; }
+      .photo-response-img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        background: linear-gradient(135deg, var(--linen), var(--biscuit));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 80px;
+        overflow: hidden;
+      }
 
-    /* ── DAILY CHECKLIST ── */
-    .checklist-section { display: flex; flex-direction: column; gap: 0; }
+      .photo-response-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
 
-    .checklist-header {
-      display: flex; justify-content: space-between; align-items: center;
-      margin-bottom: 12px;
-    }
+      .photo-response-body {
+        background: var(--cream-card);
+        padding: 20px 22px 22px;
+      }
 
-    .checklist-title {
-      font-size: 10px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--ink-light);
-    }
+      .photo-response-caption {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 19px;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--ink);
+        line-height: 1.6;
+      }
 
-    .checklist-count {
-      font-size: 11px; font-weight: 700; color: var(--cinnamon);
-      background: rgba(196,135,79,0.12); padding: 3px 10px;
-      border-radius: 50px;
-    }
+      .photo-response-from {
+        margin-top: 10px;
+        font-size: 11px;
+        color: var(--cinnamon);
+      }
 
-    .checklist-item {
-      display: flex; align-items: center; gap: 14px;
-      padding: 13px 16px;
-      background: var(--cream-card);
-      border: 1.5px solid var(--linen);
-      border-radius: 16px;
-      margin-bottom: 8px;
-      cursor: pointer;
-      transition: all 0.2s cubic-bezier(0.34,1.56,0.64,1);
-      box-shadow: 0 2px 0 var(--linen);
-      -webkit-user-select: none; user-select: none;
-    }
+      /* Audio response */
+      .audio-response {
+        background: var(--cream-card);
+        border-radius: 22px;
+        box-shadow:
+          0 2px 0 var(--linen),
+          0 8px 32px var(--shadow);
+        overflow: hidden;
+      }
 
-    .checklist-item:active { transform: scale(0.97); }
+      .audio-header {
+        padding: 22px 22px 16px;
+      }
 
-    .checklist-item.checked {
-      background: rgba(196,135,79,0.08);
-      border-color: var(--cinnamon);
-      box-shadow: 0 0 0 3px rgba(196,135,79,0.1);
-    }
+      .audio-response-label {
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--cinnamon);
+        margin-bottom: 8px;
+      }
 
-    .check-circle {
-      width: 26px; height: 26px; border-radius: 50%; flex-shrink: 0;
-      border: 2px solid var(--biscuit);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 13px; color: transparent;
-      transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
-      background: transparent;
-    }
+      .audio-response-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 20px;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--ink);
+        line-height: 1.45;
+      }
 
-    .checklist-item.checked .check-circle {
-      background: linear-gradient(135deg, var(--cinnamon), var(--terracotta));
-      border-color: transparent;
-      color: white;
-      transform: scale(1.1);
-    }
+      .audio-player-bar {
+        background: var(--linen);
+        padding: 16px 22px 20px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
 
-    .check-label {
-      flex: 1; font-size: 14px; font-weight: 400; color: var(--ink);
-      transition: color 0.2s;
-    }
+      .audio-play-btn {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--cinnamon), var(--terracotta));
+        border: none;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        cursor: pointer;
+        flex-shrink: 0;
+        box-shadow: 0 4px 14px rgba(181, 99, 58, 0.4);
+        transition: transform 0.15s;
+      }
 
-    .checklist-item.checked .check-label {
-      color: var(--ink-light);
-      text-decoration: line-through;
-      text-decoration-color: var(--biscuit);
-    }
+      .audio-play-btn:active {
+        transform: scale(0.9);
+      }
 
-    .check-emoji { font-size: 18px; flex-shrink: 0; }
+      .waveform {
+        display: flex;
+        align-items: center;
+        gap: 2.5px;
+        height: 32px;
+        flex: 1;
+      }
 
-    /* admin checklist 7-day grid */
-    .admin-section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 20px; font-weight: 500; color: var(--ink);
-      margin: 24px 0 14px; padding-top: 20px;
-      border-top: 1px solid var(--linen);
-    }
+      .wbar {
+        width: 3px;
+        background: var(--biscuit);
+        border-radius: 2px;
+        transition: background 0.3s;
+      }
 
-    .admin-section-title:first-child { border-top: none; margin-top: 0; }
+      .audio-response.playing .wbar {
+        background: var(--cinnamon);
+        animation: waveAnim 0.8s ease-in-out infinite alternate;
+      }
 
-    .checklist-grid-wrap { overflow-x: auto; padding-bottom: 4px; }
+      .audio-response.playing .wbar:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .audio-response.playing .wbar:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .audio-response.playing .wbar:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      .audio-response.playing .wbar:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+      .audio-response.playing .wbar:nth-child(5) {
+        animation-delay: 0.15s;
+      }
+      .audio-response.playing .wbar:nth-child(6) {
+        animation-delay: 0.05s;
+      }
+      .audio-response.playing .wbar:nth-child(7) {
+        animation-delay: 0.25s;
+      }
+      .audio-response.playing .wbar:nth-child(8) {
+        animation-delay: 0.35s;
+      }
 
-    .checklist-grid {
-      display: grid;
-      grid-template-columns: minmax(140px, 1fr) repeat(7, 36px);
-      gap: 6px;
-      min-width: 400px;
-    }
+      @keyframes waveAnim {
+        from {
+          height: 4px;
+        }
+        to {
+          height: 26px;
+        }
+      }
 
-    .cg-header {
-      font-size: 9px; font-weight: 700; letter-spacing: 1px;
-      text-transform: uppercase; color: var(--ink-light);
-      display: flex; align-items: center;
-    }
+      .audio-duration {
+        font-size: 11px;
+        color: var(--ink-light);
+        flex-shrink: 0;
+      }
 
-    .cg-day-header {
-      font-size: 9px; font-weight: 700; text-transform: uppercase;
-      color: var(--ink-light); text-align: center; line-height: 1.2;
-    }
+      /* Text/message response */
+      .text-response {
+        background: linear-gradient(135deg, var(--terracotta), var(--bark));
+        border-radius: 22px;
+        padding: 24px 24px 26px;
+        box-shadow: 0 6px 30px rgba(122, 68, 35, 0.3);
+        color: white;
+      }
 
-    .cg-day-header.today { color: var(--cinnamon); }
+      .text-response-tag {
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        opacity: 0.65;
+        margin-bottom: 10px;
+      }
 
-    .cg-item-label {
-      font-size: 12px; color: var(--ink); display: flex;
-      align-items: center; gap: 6px; padding: 2px 0;
-    }
+      .text-response-emoji {
+        font-size: 32px;
+        margin-bottom: 10px;
+        display: block;
+      }
 
-    .cg-cell {
-      width: 32px; height: 32px; border-radius: 10px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 14px;
-      background: var(--linen);
-    }
+      .text-response-msg {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 20px;
+        font-style: italic;
+        font-weight: 300;
+        line-height: 1.6;
+        opacity: 0.95;
+      }
 
-    .cg-cell.done { background: rgba(196,135,79,0.15); }
-    .cg-cell.na   { background: transparent; opacity: 0.3; }
+      .text-response-from {
+        margin-top: 12px;
+        font-size: 11px;
+        opacity: 0.6;
+      }
 
-  </style>
-</head>
-<body>
+      /* ── HUG BUTTON ── */
+      .hug-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 6px 0;
+      }
 
-<div class="app">
-  <!-- HEADER -->
-  <div class="header">
-    <div style="display:flex; justify-content:space-between; align-items:flex-start;">
+      .hug-label {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--ink-light);
+      }
+
+      .hug-btn-wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hug-ring {
+        position: absolute;
+        border-radius: 50%;
+        border: 2px solid var(--cinnamon);
+        opacity: 0;
+        animation: hugRing 3s ease-out infinite;
+      }
+
+      .hug-ring:nth-child(1) {
+        width: 175px;
+        height: 175px;
+        animation-delay: 0s;
+      }
+      .hug-ring:nth-child(2) {
+        width: 205px;
+        height: 205px;
+        animation-delay: 1s;
+      }
+      .hug-ring:nth-child(3) {
+        width: 235px;
+        height: 235px;
+        animation-delay: 2s;
+      }
+
+      @keyframes hugRing {
+        0% {
+          opacity: 0;
+          transform: scale(0.88);
+        }
+        30% {
+          opacity: 0.3;
+        }
+        100% {
+          opacity: 0;
+          transform: scale(1.04);
+        }
+      }
+
+      .hug-btn {
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        border: none;
+        background: radial-gradient(
+          circle at 38% 32%,
+          #f5c49a,
+          var(--cinnamon) 55%,
+          var(--terracotta)
+        );
+        box-shadow:
+          inset 0 -4px 12px rgba(0, 0, 0, 0.15),
+          inset 0 4px 10px rgba(255, 255, 255, 0.18),
+          0 8px 40px rgba(181, 99, 58, 0.45),
+          0 0 0 6px rgba(196, 135, 79, 0.15);
+        font-size: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        position: relative;
+        z-index: 1;
+        transition:
+          transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1),
+          box-shadow 0.2s;
+      }
+
+      .hug-btn:active {
+        transform: scale(0.87);
+        box-shadow: 0 4px 20px rgba(181, 99, 58, 0.3);
+      }
+
+      .hug-response-text {
+        display: none;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 17px;
+        font-style: italic;
+        font-weight: 300;
+        color: var(--ink);
+        text-align: center;
+        line-height: 1.6;
+        padding: 16px 20px;
+        background: var(--cream-card);
+        border-radius: 18px;
+        box-shadow:
+          0 2px 0 var(--linen),
+          0 4px 16px var(--shadow);
+        animation: hugPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+
+      .hug-response-text.show {
+        display: block;
+      }
+
+      @keyframes hugPop {
+        from {
+          opacity: 0;
+          transform: scale(0.85) translateY(8px);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) translateY(0);
+        }
+      }
+
+      /* ── JOURNAL SCREEN ── */
+      .journal-hero {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 26px;
+        font-weight: 300;
+        color: var(--ink);
+        line-height: 1.3;
+      }
+
+      .journal-hero em {
+        font-style: italic;
+        color: var(--terracotta);
+      }
+
+      .journal-sub {
+        font-size: 12px;
+        color: var(--ink-light);
+        margin-top: 6px;
+        line-height: 1.65;
+      }
+
+      .journal-area {
+        width: 100%;
+        background: var(--cream-card);
+        border: 1.5px solid var(--linen);
+        border-radius: 20px;
+        padding: 20px;
+        font-family: 'Nunito', sans-serif;
+        font-size: 15px;
+        font-weight: 300;
+        color: var(--ink);
+        line-height: 1.75;
+        resize: none;
+        min-height: 180px;
+        outline: none;
+        transition:
+          border-color 0.2s,
+          box-shadow 0.2s;
+        box-shadow: 0 2px 0 var(--linen);
+      }
+
+      .journal-area:focus {
+        border-color: var(--cinnamon);
+        box-shadow: 0 0 0 3px rgba(196, 135, 79, 0.12);
+      }
+
+      .journal-area::placeholder {
+        color: var(--ink-light);
+        font-style: italic;
+      }
+
+      .save-btn {
+        width: 100%;
+        padding: 17px;
+        background: linear-gradient(135deg, var(--cinnamon), var(--terracotta));
+        border: none;
+        border-radius: 18px;
+        color: white;
+        font-family: 'Nunito', sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+        box-shadow: 0 6px 24px rgba(181, 99, 58, 0.4);
+        transition:
+          transform 0.15s,
+          box-shadow 0.15s;
+      }
+
+      .save-btn:active {
+        transform: scale(0.98);
+        box-shadow: 0 3px 12px rgba(181, 99, 58, 0.3);
+      }
+
+      /* ── TOAST ── */
+      .toast {
+        position: fixed;
+        bottom: 96px;
+        left: 50%;
+        transform: translateX(-50%) translateY(14px);
+        background: var(--bark);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 50px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        opacity: 0;
+        pointer-events: none;
+        z-index: 1000;
+        transition: all 0.3s;
+        white-space: nowrap;
+      }
+
+      .toast.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      /* ── ADMIN OVERLAY ── */
+      .admin-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: var(--parchment);
+        z-index: 800;
+        overflow-y: auto;
+        animation: fadeIn 0.25s;
+        padding: env(safe-area-inset-top, 20px) 0
+          env(safe-area-inset-bottom, 20px);
+      }
+
+      .admin-overlay.show {
+        display: block;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .admin-header {
+        padding: 24px 24px 16px;
+        border-bottom: 1px solid var(--linen);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .admin-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 22px;
+        font-weight: 500;
+      }
+
+      .admin-close {
+        background: var(--linen);
+        border: none;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        font-size: 16px;
+        cursor: pointer;
+        color: var(--bark);
+      }
+
+      .admin-body {
+        padding: 20px;
+      }
+
+      .admin-entry {
+        background: var(--cream-card);
+        border-radius: 18px;
+        padding: 20px;
+        margin-bottom: 14px;
+        box-shadow:
+          0 2px 0 var(--linen),
+          0 4px 16px var(--shadow);
+      }
+
+      .admin-entry-meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .admin-mood {
+        font-size: 12px;
+        color: var(--terracotta);
+        font-weight: 700;
+      }
+      .admin-time {
+        font-size: 11px;
+        color: var(--ink-light);
+      }
+
+      .admin-text {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 17px;
+        font-style: italic;
+        color: var(--ink);
+        line-height: 1.65;
+      }
+
+      .admin-empty {
+        text-align: center;
+        color: var(--ink-light);
+        font-style: italic;
+        padding: 48px 20px;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 18px;
+        line-height: 1.7;
+      }
+
+      /* ── PARTICLES ── */
+      .particle {
+        position: fixed;
+        pointer-events: none;
+        z-index: 9000;
+        animation: particleFloat 1.8s ease-out forwards;
+        font-size: 20px;
+      }
+
+      @keyframes particleFloat {
+        0% {
+          opacity: 1;
+          transform: translate(0, 0) scale(1) rotate(0deg);
+        }
+        100% {
+          opacity: 0;
+          transform: translate(var(--tx), var(--ty)) scale(0.2)
+            rotate(var(--rot));
+        }
+      }
+
+      /* ── iOS INSTALL HINT ── */
+      .install-hint {
+        margin: -6px 20px 4px;
+        background: var(--cream-card);
+        border-radius: 18px;
+        padding: 16px 18px;
+        box-shadow:
+          0 2px 0 var(--linen),
+          0 4px 14px var(--shadow);
+        display: none;
+        gap: 12px;
+        align-items: flex-start;
+        font-size: 12px;
+        color: var(--ink-light);
+        line-height: 1.6;
+      }
+
+      .install-hint.show {
+        display: flex;
+      }
+      .install-hint-icon {
+        font-size: 20px;
+        flex-shrink: 0;
+        margin-top: 1px;
+      }
+      .install-hint strong {
+        color: var(--terracotta);
+        display: block;
+        margin-bottom: 2px;
+        font-size: 13px;
+      }
+
+      .dismiss-hint {
+        display: none;
+        width: 100%;
+        padding: 10px;
+        background: none;
+        border: none;
+        color: var(--ink-light);
+        font-size: 12px;
+        text-align: center;
+        cursor: pointer;
+        font-family: 'Nunito', sans-serif;
+      }
+
+      .dismiss-hint.show {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <!-- HEADER -->
+      <div class="header">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+          "
+        >
+          <div>
+            <div class="time-greeting" id="timeGreeting">Good morning</div>
+            <div class="header-name">Hey, <em>Sanskriti</em> 🌸</div>
+          </div>
+          <div
+            style="
+              text-align: right;
+              font-size: 11px;
+              color: var(--ink-light);
+              line-height: 1.6;
+              margin-top: 4px;
+            "
+            id="dateDisplay"
+          ></div>
+        </div>
+        <div class="header-rule"></div>
+      </div>
+
+      <!-- ═══ HOME SCREEN ═══ -->
+      <div class="screen active" id="screen-home">
+        <!-- Today's affirmation — single, no navigation -->
+        <div class="card affirmation-card">
+          <div class="affirmation-deco">"</div>
+          <div class="card-inner">
+            <span class="card-tag">Today's affirmation</span>
+            <div class="affirmation-text" id="affirmText">Loading…</div>
+            <div class="affirmation-from">— Ankita 🌸</div>
+          </div>
+        </div>
+
+        <!-- Mood right now -->
+        <div>
+          <div class="mood-section-title">How are you feeling right now?</div>
+          <div class="mood-grid" id="moodGrid"></div>
+        </div>
+
+        <!-- Mood response area -->
+        <div class="mood-response" id="moodResponse"></div>
+
+        <!-- Hug button -->
+        <div class="hug-section">
+          <div class="hug-label">need a hug?</div>
+          <div class="hug-btn-wrap">
+            <div class="hug-ring"></div>
+            <div class="hug-ring"></div>
+            <div class="hug-ring"></div>
+            <button class="hug-btn" onclick="sendHug(event)">🫂</button>
+          </div>
+          <div class="hug-response-text" id="hugResponse"></div>
+        </div>
+      </div>
+
+      <!-- ═══ JOURNAL SCREEN ═══ -->
+      <div class="screen" id="screen-journal">
+        <div>
+          <div class="journal-hero">Write it out, <em>Sanskriti</em>.</div>
+          <div class="journal-sub">
+            This goes quietly to Ankita. No pressure — even one word is enough.
+            She's always reading.
+          </div>
+        </div>
+        <textarea
+          class="journal-area"
+          id="journalText"
+          placeholder="Whatever's on your mind… I'm here."
+          rows="7"
+        ></textarea>
+        <button class="save-btn" onclick="saveEntry()">
+          Send to Ankita 💛
+        </button>
+      </div>
+    </div>
+
+    <!-- Bottom Nav — just two tabs now, clean -->
+    <nav class="bottom-nav">
+      <button class="nav-btn active" onclick="navTo('home', this)">
+        <span class="nav-icon">🏡</span>
+        <span class="nav-label">Home</span>
+      </button>
+      <button class="nav-btn" onclick="navTo('journal', this)">
+        <span class="nav-icon">✍️</span>
+        <span class="nav-label">Journal</span>
+      </button>
+    </nav>
+
+    <!-- iOS install hint -->
+    <div class="install-hint" id="installHint">
+      <span class="install-hint-icon">📲</span>
       <div>
-        <div class="time-greeting" id="timeGreeting">Good morning</div>
-        <div class="header-name">Hey, <em>Sanskriti</em> 🌸</div>
-      </div>
-      <div style="text-align:right; font-size:11px; color:var(--ink-light); line-height:1.6; margin-top:4px;" id="dateDisplay"></div>
-    </div>
-    <div class="header-rule"></div>
-  </div>
-
-  <!-- HOME SCREEN -->
-  <div class="screen active" id="screen-home">
-
-    <!-- Affirmation -->
-    <div class="card affirmation-card">
-      <div class="affirmation-deco">"</div>
-      <div class="card-inner">
-        <span class="card-tag">Today's affirmation</span>
-        <div class="affirmation-text" id="affirmText">Loading…</div>
-        <div class="affirmation-from">— Ankita 🌸</div>
+        <strong>Add to your Home Screen</strong>
+        Safari → Share → Add to Home Screen. Then you'll have this like a real
+        app 🌸
       </div>
     </div>
+    <button class="dismiss-hint" id="dismissHint" onclick="dismissInstall()">
+      Got it ✓
+    </button>
 
-    <!-- Mood -->
-    <div>
-      <div class="mood-section-title">How are you feeling right now?</div>
-      <div class="mood-grid" id="moodGrid"></div>
-    </div>
+    <!-- Toast -->
+    <div class="toast" id="toast"></div>
 
-    <!-- Mood response -->
-    <div class="mood-response" id="moodResponse"></div>
-
-    <!-- Hug -->
-    <div class="hug-section">
-      <div class="hug-label">need a hug?</div>
-      <div class="hug-btn-wrap">
-        <div class="hug-ring"></div>
-        <div class="hug-ring"></div>
-        <div class="hug-ring"></div>
-        <button class="hug-btn" onclick="sendHug(event)">🫂</button>
+    <!-- Admin overlay -->
+    <div class="admin-overlay" id="adminOverlay">
+      <div class="admin-header">
+        <div class="admin-title">💌 Sanskriti's Journal</div>
+        <button class="admin-close" onclick="closeAdmin()">✕</button>
       </div>
-      <div class="hug-response-text" id="hugResponse"></div>
+      <div class="admin-body" id="adminBody"></div>
     </div>
 
-  </div>
-
-  <!-- JOURNAL SCREEN -->
-  <div class="screen" id="screen-journal">
-
-    <div>
-      <div class="journal-hero">Hey <em>Sanskriti</em>, how's your heart?</div>
-      <div class="journal-sub">Tap an emoji, write a word, or both — Ankita sees it all. Whatever feels easy today.</div>
-    </div>
-
-    <!-- Emoji quick-send -->
-    <div>
-      <div class="emoji-section-label">Tap what feels right</div>
-      <div id="emojiCategories"></div>
-    </div>
-
-    <!-- Selected emojis preview -->
-    <div class="selected-emojis-wrap" id="selectedEmojiWrap">
-      <span class="selected-emojis-label">Nothing selected yet — tap any emoji above</span>
-    </div>
-
-    <!-- Gentle nudge after emoji tap -->
-    <div class="write-nudge" id="writeNudge">
-      Want to add a word or two? Even one sentence means a lot. 🌸
-    </div>
-
-    <!-- Daily checklist -->
-    <div class="checklist-section">
-      <div class="checklist-header">
-        <div class="checklist-title">Today's little wins</div>
-        <div class="checklist-count" id="checkCount">0 / 0</div>
-      </div>
-      <div id="checklistItems"></div>
-    </div>
-
-    <!-- Optional text -->
-    <textarea class="journal-area" id="journalText" placeholder="Whatever's on your mind… I'm listening." rows="4"></textarea>
-
-    <button class="save-btn" onclick="saveEntry()">Send to Ankita 💛</button>
-  </div>
-</div>
-
-<!-- Nav -->
-<nav class="bottom-nav">
-  <button class="nav-btn active" onclick="navTo('home', this)">
-    <span class="nav-icon">🏡</span><span class="nav-label">Home</span>
-  </button>
-  <button class="nav-btn" onclick="navTo('journal', this)">
-    <span class="nav-icon">✍️</span><span class="nav-label">Journal</span>
-  </button>
-</nav>
-
-<!-- Install hint -->
-<div class="install-hint" id="installHint">
-  <span class="install-hint-icon">📲</span>
-  <div><strong>Add to your Home Screen</strong>Safari → Share → Add to Home Screen 🌸</div>
-</div>
-<button class="dismiss-hint" id="dismissHint" onclick="dismissInstall()">Got it ✓</button>
-
-<!-- Toast -->
-<div class="toast" id="toast"></div>
-
-<!-- Admin overlay -->
-<div class="admin-overlay" id="adminOverlay">
-  <div class="admin-header">
-    <div class="admin-title">💌 Sanskriti's Journal</div>
-    <button class="admin-close" onclick="closeAdmin()">✕</button>
-  </div>
-  <div class="admin-body" id="adminBody"></div>
-</div>
-
-
-<!-- ═══════════════════════════════════════════════════
-     ✏️  CONFIG — only change things in this section
+    <!-- ════════════════════════════════════════════════════
+     ✏️  CONTENT — Edit this section to update the app
 ════════════════════════════════════════════════════ -->
-<script>
-const CONFIG = {
+    <script>
+      const CONFIG = {
+        // ── SECRET ADMIN LINK ─────────────────────────────────────────
+        // Read Sanskriti's journal by visiting:  yoururl.com?admin=YOUR_PASSWORD
+        // Change this before you deploy!
+        adminPassword: 'ankita0607',
 
-  // ── GITHUB ──────────────────────────────────────────────────
-  github: {
-    user: "Ankita-0607",
-    repo: "sunshine-letters",
-    branch: "main",
-    // Folder names in your repo:
-    picsFolder:    "pics",      // .jpg / .png → shown for SAD mood
-    downFolder:    "down",      // .mp3 / .m4a → played for DOWN mood
-    anxiousFolder: "anxious",   // .mp3 / .m4a → played for ANXIOUS mood
-  },
+        // ── TODAY'S AFFIRMATION ────────────────────────────────────────
+        // One per day, rotates automatically. Add as many as you want.
+        affirmations: [
+          'You showed up today. That is already more than enough.',
+          'I am rooting for you from Pune, every single minute.',
+          "Getting out of bed? That's already a win. I mean it.",
+          "You are not your anxiety. You're the one watching it, and you're doing great.",
+          'Rest is not giving up. Rest is how you come back.',
+          "I'm so glad you exist. The world genuinely got better when you came into it.",
+          'Your feelings are real. They are not forever.',
+          'On your hardest days — especially those — you are still so loved.',
+          'One small step today is enough. Even just water counts.',
+          "You've gotten through 100% of your hard days. This one too.",
+          'I would choose you as my best friend every single time, in every universe.',
+          "You are braver than you believe, and more loved than you'll ever know.",
+        ],
 
-  // ── ADMIN PASSWORD ──────────────────────────────────────────
-  // Read journal at: yoururl.com?admin=THIS_PASSWORD
-  // Change before deploying!
-  adminPassword: "ankita0607",
+        // ── HUG MESSAGES ──────────────────────────────────────────────
+        hugMessages: [
+          "Sending warmth from Pune. You're not alone, not even for a second. 🫂",
+          'That button just reached me. I felt it. Consider yourself thoroughly hugged.',
+          "Big, soft, ridiculous bear hug. You're stuck with me. 💛",
+          "I'm squeezing you through this screen. Hold on. I mean it.",
+          "You pressed it, which means you needed it. I'm here. Always. 🌸",
+        ],
 
-  // ── DAILY CHECKLIST ─────────────────────────────────────────
-  // Comment out any items you don't want shown (add // before the line)
-  checklist: [
-    { id: 'grateful',   emoji: '🌅', label: 'Woke up grateful'              },
-    { id: 'breakfast',  emoji: '🍳', label: 'Had breakfast'                  },
-    { id: 'water',      emoji: '💧', label: 'Drank water'                    },
-    { id: 'meds',       emoji: '💊', label: 'Took my medication'             },
-    { id: 'outside',    emoji: '🌿', label: 'Went outside'                   },
-    { id: 'body',       emoji: '🧘', label: 'Moved my body'                  },
-    { id: 'connect',    emoji: '📱', label: 'Called or texted someone'       },
-    { id: 'selfcare',   emoji: '🫶', label: 'Did one small thing for myself' },
-    { id: 'dressed',    emoji: '👗', label: 'Got dressed'                    },
-    { id: 'sleep',      emoji: '🌙', label: 'Slept okay last night'          },
-  ],
+        // ── MOOD RESPONSES ────────────────────────────────────────────
+        // Each mood triggers a specific type of response.
+        // Types: "photo"  → shows a photo + your caption
+        //        "audio"  → plays a voice note or sound
+        //        "text"   → warm text message from you
 
-  // ── AFFIRMATIONS (one per day, auto-rotates) ─────────────────
-  affirmations: [
-    "You showed up today. That is already more than enough.",
-    "I am rooting for you from Pune, every single minute.",
-    "Getting out of bed? That's already a win. I mean it.",
-    "You are not your anxiety. You're the one watching it, and you're doing great.",
-    "Rest is not giving up. Rest is how you come back.",
-    "I'm so glad you exist. The world genuinely got better when you came into it.",
-    "Your feelings are real. They are not forever.",
-    "On your hardest days — especially those — you are still so loved.",
-    "One small step today is enough. Even just water counts.",
-    "You've gotten through 100% of your hard days. This one too.",
-    "I would choose you as my best friend every single time, in every universe.",
-    "You are braver than you believe, and more loved than you'll ever know.",
-    "There is no version of the future I'm imagining that doesn't have you in it.",
-    "You don't have to earn rest. You don't have to earn love. You just have to be.",
-    "It's okay to not be okay. I'll be okay enough for both of us today.",
-  ],
+        moods: [
+          {
+            emoji: '😔',
+            label: 'Sad',
+            type: 'photo',
+            // Replace src with your actual image URL. Leave null until you have one.
+            src: null,
+            photoEmoji: '🌸', // shown if no image yet
+            caption:
+              "This is us on one of my favourite days. I look at this and I see someone I love so much it's almost annoying.",
+            from: 'You are not alone in this. — Ankita',
+          },
+          {
+            emoji: '😰',
+            label: 'Anxious',
+            type: 'audio',
+            title: 'Hey. Breathe with me.',
+            subtitle: "Ankita's voice, just for this moment",
+            // src: URL to your voice note OR a cat purr/sound file
+            // Options: record yourself doing a breathing exercise, or use a cat purring sound
+            // Free cat purr: "https://www.soundjay.com/animal/sounds/cat-purring-1.mp3"
+            src: null,
+            duration: '1:30',
+          },
+          {
+            emoji: '😞',
+            label: 'Down',
+            type: 'audio',
+            title: 'You are so much more than this moment.',
+            subtitle: 'A message from Ankita',
+            // Record yourself saying: "Hey, I see you. I know today is hard. But I need you to know..."
+            src: null,
+            duration: '1:00',
+          },
+          {
+            emoji: '😶',
+            label: 'Numb',
+            type: 'text',
+            emoji2: '🕯️',
+            message:
+              "Numb days are real. You don't have to feel anything right now. You're allowed to just exist. I'm here in the quiet with you.",
+          },
+          {
+            emoji: '😐',
+            label: 'Okay-ish',
+            type: 'text',
+            emoji2: '🌿',
+            message:
+              "Okay-ish is actually a pretty good place. Not every day has to be great. I'm proud of you for showing up anyway.",
+          },
+          {
+            emoji: '☀️',
+            label: 'Good',
+            type: 'text',
+            emoji2: '✨',
+            message:
+              "A good day! Write it down somewhere. You earned this one. I'm smiling in Pune because of this. 💛",
+          },
+        ],
+      };
+    </script>
 
-  // ── HUG MESSAGES ────────────────────────────────────────────
-  hugMessages: [
-    "Sending warmth from Pune. You're not alone, not even for a second. 🫂",
-    "That button just reached me. I felt it. Consider yourself thoroughly hugged.",
-    "Big, soft, ridiculous bear hug. You're stuck with me. 💛",
-    "I'm squeezing you through this screen. Hold on. I mean it.",
-    "You pressed it, which means you needed it. I'm here. Always. 🌸",
-    "Hugged. Non-negotiable. No takebacks.",
-    "Distance is a lie. I am right there with you.",
-  ],
-
-  // ── SAD MOOD — photo captions (random pick, cycles through all) ──
-  // When a new photo loads, a random caption is picked too
-  sadCaptions: [
-    { caption: "This is us on one of my favourite days. I look at this and I see someone I love so much it's almost annoying.", from: "You are not alone in this. — Ankita 🌸" },
-    { caption: "Remember this? We were so happy. We will be again. I promise.", from: "Holding your hand from Pune. — Ankita" },
-    { caption: "Look at that smile. That smile exists. It will come back.", from: "I've got you. — Ankita 🌸" },
-    { caption: "This is what I think of when I think of you — not the hard days. This.", from: "You are so loved. — Ankita" },
-    { caption: "Two people, zero worries, the best kind of day. More of this is coming.", from: "I believe that. — Ankita 🌸" },
-  ],
-
-  // ── ANXIOUS MOOD — titles shown with the audio ──────────────
-  anxiousTitles: [
-    "Hey. Breathe with me.",
-    "I'm right here. Just breathe.",
-    "Let's slow down together.",
-    "You're safe. Come back to now.",
-  ],
-
-  // ── DOWN MOOD — titles shown with the audio ─────────────────
-  downTitles: [
-    "You are so much more than this moment.",
-    "I need you to hear this.",
-    "This one's for the hard days.",
-    "From me to you, right now.",
-  ],
-
-  // ── OKAY-ISH MOOD — rotating text messages ──────────────────
-  okayMessages: [
-    { emoji: "🌿", msg: "Okay-ish is actually a pretty good place. Not every day has to be great. I'm proud of you for showing up anyway." },
-    { emoji: "☁️", msg: "Some days are just in-between days, and that's completely allowed. You're doing fine." },
-    { emoji: "🍵", msg: "Okay-ish days are the ones where you're still here, still trying. That counts for everything." },
-    { emoji: "🌱", msg: "Not every day blooms. Some days you're just being still, and that's enough." },
-    { emoji: "🕯️", msg: "A quiet day is still a day you got through. I see that, even from here." },
-    { emoji: "🌾", msg: "Being okay-ish means you're still holding on. Keep holding on. I'm holding on too." },
-    { emoji: "💛", msg: "You don't have to be fine. You just have to be. That's enough for today." },
-    { emoji: "🌙", msg: "The middle days matter. They're how you get from hard days to good ones." },
-  ],
-
-  // ── GOOD MOOD — rotating text messages ──────────────────────
-  goodMessages: [
-    { emoji: "✨", msg: "A good day! Write it down somewhere. You earned this one. I'm smiling in Pune because of this. 💛" },
-    { emoji: "🌸", msg: "YES! A good day! I am doing a little victory dance for you right now. Don't picture it." },
-    { emoji: "☀️", msg: "This is the one. Soak it in. You deserve every single second of this good day." },
-    { emoji: "🎉", msg: "A good day! Protect it, enjoy it, don't overthink it. Just let it be good. You did that." },
-    { emoji: "🌻", msg: "Good days are proof that they exist. They will keep existing. Remember this one." },
-    { emoji: "💫", msg: "Look at you, having a good day! I knew you had it in you. I always knew." },
-    { emoji: "🍊", msg: "Good day energy! I'm stealing some of it from Pune. You have plenty to share." },
-    { emoji: "🌈", msg: "Today is a good day and you are a good person having it. Both things are true." },
-  ],
-
-  // ── NUMB MOOD — rotating text messages ──────────────────────
-  numbMessages: [
-    { emoji: "🕯️", msg: "Numb days are real. You don't have to feel anything right now. You're allowed to just exist. I'm here in the quiet with you." },
-    { emoji: "🌫️", msg: "You don't have to perform being okay. Just be wherever you are. I'm sitting with you in it." },
-    { emoji: "🫧", msg: "Nothing to feel right now is okay. You're still here, and that's what matters." },
-    { emoji: "🌑", msg: "Quiet days, empty days — they're part of it too. Not forever. Just today. I'm with you." },
-    { emoji: "🍃", msg: "Sometimes healing looks like numbness. Your mind is resting. Let it. I'll watch over you." },
-  ],
-};
-</script>
-
-
-<!-- ═══════════════════════════════════════
+    <!-- ════════════════════════════════════════
      APP LOGIC
 ════════════════════════════════════════ -->
-<script>
-// ─────────────────────────────────────────────
-// GITHUB CONTENT FETCHER
-// Uses GitHub API to list folder contents,
-// then smart-shuffles with localStorage memory
-// ─────────────────────────────────────────────
-const GH = {
-  base: `https://api.github.com/repos/${CONFIG.github.user}/${CONFIG.github.repo}/contents`,
-  raw:  `https://raw.githubusercontent.com/${CONFIG.github.user}/${CONFIG.github.repo}/${CONFIG.github.branch}`,
-
-  // Fetch file list for a folder from GitHub API
-  async listFolder(folder) {
-    try {
-      const res = await fetch(`${GH.base}/${folder}?ref=${CONFIG.github.branch}`, {
-        headers: { 'Accept': 'application/vnd.github.v3+json' }
-      });
-      if (!res.ok) return [];
-      const files = await res.json();
-      return files
-        .filter(f => f.type === 'file')
-        .map(f => f.name);
-    } catch(e) { return []; }
-  },
-
-  // Build raw URL for a file
-  rawUrl(folder, filename) {
-    return `${GH.raw}/${folder}/${encodeURIComponent(filename)}`;
-  }
-};
-
-// ─────────────────────────────────────────────
-// SMART SHUFFLE PICKER
-// Tracks which items have been shown, picks from
-// unseen ones, resets when all have been shown
-// ─────────────────────────────────────────────
-const Picker = {
-  seenKey(namespace) { return `seen_${namespace}`; },
-
-  getSeen(namespace) {
-    try { return JSON.parse(localStorage.getItem(this.seenKey(namespace)) || '[]'); }
-    catch(e) { return []; }
-  },
-
-  setSeen(namespace, arr) {
-    try { localStorage.setItem(this.seenKey(namespace), JSON.stringify(arr)); }
-    catch(e) {}
-  },
-
-  // Pick one item from list, avoiding recently seen ones
-  // If all have been seen, reset and start fresh
-  pick(namespace, items) {
-    if (!items || !items.length) return null;
-    let seen = this.getSeen(namespace);
-    let unseen = items.filter(x => !seen.includes(x));
-
-    // All seen — reset
-    if (!unseen.length) {
-      seen = [];
-      unseen = [...items];
-      this.setSeen(namespace, []);
-    }
-
-    const chosen = unseen[Math.floor(Math.random() * unseen.length)];
-    seen.push(chosen);
-    this.setSeen(namespace, seen);
-    return chosen;
-  },
-
-  // Pick from a plain array of objects/strings (for text messages)
-  pickFromArray(namespace, arr) {
-    const keys = arr.map((_, i) => String(i));
-    const pickedKey = this.pick(namespace, keys);
-    return arr[parseInt(pickedKey)];
-  }
-};
-
-// ─────────────────────────────────────────────
-// MAIN APP
-// ─────────────────────────────────────────────
-let activeAudio = null;
-
-window.addEventListener('DOMContentLoaded', () => {
-  setupGreeting();
-  setupDate();
-  setupAffirmation();
-  setupMoods();
-  setupEmojiJournal();
-  setupChecklist();
-  checkAdmin();
-  checkInstallHint();
-});
-
-function setupGreeting() {
-  const h = new Date().getHours();
-  document.getElementById('timeGreeting').textContent =
-    h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening';
-}
-
-function setupDate() {
-  const d = new Date();
-  const days   = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  document.getElementById('dateDisplay').innerHTML =
-    `${days[d.getDay()]}<br>${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
-}
-
-function setupAffirmation() {
-  const day = Math.floor(Date.now() / 86400000);
-  document.getElementById('affirmText').textContent =
-    CONFIG.affirmations[day % CONFIG.affirmations.length];
-}
-
-// ── MOODS ──
-const MOODS = [
-  { emoji: '😔', label: 'Sad',      key: 'sad'      },
-  { emoji: '😰', label: 'Anxious',  key: 'anxious'  },
-  { emoji: '😞', label: 'Down',     key: 'down'     },
-  { emoji: '😶', label: 'Numb',     key: 'numb'     },
-  { emoji: '😐', label: 'Okay-ish', key: 'okay'     },
-  { emoji: '☀️', label: 'Good',     key: 'good'     },
-];
-
-function setupMoods() {
-  const grid = document.getElementById('moodGrid');
-  MOODS.forEach((mood, i) => {
-    const tile = document.createElement('button');
-    tile.className = 'mood-tile';
-    tile.innerHTML = `<span class="mood-emoji">${mood.emoji}</span><span class="mood-word">${mood.label}</span>`;
-    tile.onclick = () => {
-      document.querySelectorAll('.mood-tile').forEach(t => t.classList.remove('selected'));
-      tile.classList.add('selected');
-      handleMood(mood.key);
-    };
-    grid.appendChild(tile);
-  });
-}
-
-async function handleMood(key) {
-  const container = document.getElementById('moodResponse');
-  container.classList.remove('show');
-  container.innerHTML = '';
-  stopAudio();
-
-  // Show skeleton while loading
-  if (key === 'sad' || key === 'anxious' || key === 'down') {
-    container.innerHTML = skeletonFor(key);
-    void container.offsetWidth;
-    container.classList.add('show');
-  }
-
-  if (key === 'sad') {
-    await renderSad(container);
-  } else if (key === 'anxious') {
-    await renderAudio(container, CONFIG.github.anxiousFolder, 'anxious', CONFIG.anxiousTitles);
-  } else if (key === 'down') {
-    await renderAudio(container, CONFIG.github.downFolder, 'down', CONFIG.downTitles);
-  } else if (key === 'numb') {
-    renderText(container, CONFIG.numbMessages, 'numb');
-  } else if (key === 'okay') {
-    renderText(container, CONFIG.okayMessages, 'okay');
-  } else if (key === 'good') {
-    renderText(container, CONFIG.goodMessages, 'good');
-  }
-
-  setTimeout(() => container.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 120);
-}
-
-function skeletonFor(key) {
-  if (key === 'sad') return `
-    <div class="skeleton">
-      <div class="skeleton-img"></div>
-      <div class="skeleton-lines">
-        <div class="skeleton-line"></div>
-        <div class="skeleton-line"></div>
-        <div class="skeleton-line short"></div>
-      </div>
-    </div>`;
-  return `
-    <div class="skeleton">
-      <div class="skeleton-lines" style="padding:22px">
-        <div class="skeleton-line short"></div>
-        <div class="skeleton-line"></div>
-      </div>
-      <div style="background:var(--linen); padding:16px 22px 20px; display:flex; gap:14px; align-items:center;">
-        <div style="width:48px;height:48px;border-radius:50%;background:var(--biscuit);flex-shrink:0;animation:shimmer 1.4s infinite;background-size:200% 100%;background-image:linear-gradient(90deg,var(--linen) 25%,var(--biscuit) 50%,var(--linen) 75%);"></div>
-        <div style="flex:1;height:14px;border-radius:7px;animation:shimmer 1.4s infinite;background:linear-gradient(90deg,var(--linen) 25%,var(--biscuit) 50%,var(--linen) 75%);background-size:200% 100%;"></div>
-      </div>
-    </div>`;
-}
-
-// ── SAD: random photo from GitHub/pics ──
-async function renderSad(container) {
-  const files = await GH.listFolder(CONFIG.github.picsFolder);
-  const images = files.filter(f => /\.(jpg|jpeg|png)$/i.test(f));
-
-  if (!images.length) {
-    container.innerHTML = renderFallbackText('sad');
-    return;
-  }
-
-  const filename = Picker.pick('pics', images);
-  const imgUrl   = GH.rawUrl(CONFIG.github.picsFolder, filename);
-  const cap      = Picker.pickFromArray('sadCaptions', CONFIG.sadCaptions);
-
-  container.innerHTML = `
-    <div class="photo-response">
-      <div class="photo-response-img">
-        <img src="${imgUrl}" alt="us" onload="this.style.opacity=1" style="opacity:0;transition:opacity 0.5s;" />
-      </div>
-      <div class="photo-response-body">
-        <div class="photo-response-caption">${cap.caption}</div>
-        <div class="photo-response-from">${cap.from}</div>
-      </div>
-    </div>`;
-}
-
-// ── AUDIO: random audio file from a GitHub folder (mp3, m4a, wav, ogg) ──
-async function renderAudio(container, folder, namespace, titles) {
-  const files = await GH.listFolder(folder);
-  const mp3s  = files.filter(f => /\.(mp3|m4a|wav|ogg)$/i.test(f));
-
-  if (!mp3s.length) {
-    container.innerHTML = renderFallbackText(namespace);
-    return;
-  }
-
-  const filename = Picker.pick(namespace, mp3s);
-  const audioUrl = GH.rawUrl(folder, filename);
-  const title    = Picker.pickFromArray(namespace + 'Titles', titles);
-
-  const bars = [...Array(8)].map(() => {
-    const h = 4 + Math.floor(Math.random() * 22);
-    return `<div class="wbar" style="height:${h}px"></div>`;
-  }).join('');
-
-  container.innerHTML = `
-    <div class="audio-response" id="audioCard">
-      <div class="audio-header">
-        <div class="audio-response-label">A message from Ankita</div>
-        <div class="audio-response-title">${title}</div>
-      </div>
-      <div class="audio-player-bar">
-        <button class="audio-play-btn" id="audioPlayBtn" onclick="toggleAudio('${audioUrl}')">▶</button>
-        <div class="waveform">${bars}</div>
-        <span class="audio-duration" id="audioDur">—</span>
-      </div>
-    </div>`;
-
-  // Preload to get duration
-  const probe = new Audio(audioUrl);
-  probe.addEventListener('loadedmetadata', () => {
-    const m = Math.floor(probe.duration / 60);
-    const s = Math.floor(probe.duration % 60).toString().padStart(2,'0');
-    const el = document.getElementById('audioDur');
-    if (el) el.textContent = `${m}:${s}`;
-  });
-}
-
-function toggleAudio(url) {
-  const card = document.getElementById('audioCard');
-  const btn  = document.getElementById('audioPlayBtn');
-
-  if (activeAudio) {
-    activeAudio.pause();
-    card && card.classList.remove('playing');
-    btn  && (btn.textContent = '▶');
-    const wasUrl = activeAudio._url;
-    activeAudio = null;
-    if (wasUrl === url) return; // toggle off same track
-  }
-
-  const audio = new Audio(url);
-  audio._url = url;
-  activeAudio = audio;
-  card && card.classList.add('playing');
-  btn  && (btn.textContent = '⏸');
-  audio.play().catch(() => {});
-  audio.onended = () => {
-    card && card.classList.remove('playing');
-    btn  && (btn.textContent = '▶');
-    activeAudio = null;
-  };
-}
-
-function stopAudio() {
-  if (activeAudio) { activeAudio.pause(); activeAudio = null; }
-  const card = document.getElementById('audioCard');
-  if (card) card.classList.remove('playing');
-}
-
-// ── TEXT responses (numb / okay / good) ──
-function renderText(container, messages, namespace) {
-  const item = Picker.pickFromArray(namespace, messages);
-  container.innerHTML = `
-    <div class="text-response">
-      <div class="text-response-tag">From Ankita, just for you</div>
-      <span class="text-response-emoji">${item.emoji}</span>
-      <div class="text-response-msg">${item.msg}</div>
-      <div class="text-response-from">— Ankita 🌸</div>
-    </div>`;
-  void container.offsetWidth;
-  container.classList.add('show');
-}
-
-// Fallback if GitHub folder is empty/not yet uploaded
-function renderFallbackText(key) {
-  const msgs = {
-    sad:     "I'm thinking of you right now. Even from far away, I see you. 🌸",
-    anxious: "Breathe. In slowly, out slowly. I'm right here with you.",
-    down:    "You are so much more than this moment. I need you to know that.",
-  };
-  return `<div class="error-nudge">${msgs[key] || "I\u2019m here with you. Always."}</div>`;
-}
-
-// ── HUG ──
-function sendHug(e) {
-  const rect = e.currentTarget.getBoundingClientRect();
-  burstParticles(rect.left + rect.width / 2, rect.top + rect.height / 2);
-  if (navigator.vibrate) navigator.vibrate([30, 20, 40, 20, 30]);
-
-  const msg = Picker.pickFromArray('hug', CONFIG.hugMessages);
-  const el  = document.getElementById('hugResponse');
-  el.textContent = msg;
-  el.classList.remove('show');
-  void el.offsetWidth;
-  el.classList.add('show');
-  clearTimeout(window._hugT);
-  window._hugT = setTimeout(() => el.classList.remove('show'), 6000);
-}
-
-function burstParticles(cx, cy) {
-  ['🌸','💛','✨','🫂','💗','🌿','💫'].forEach((s, i) => {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    const angle = (Math.PI * 2 * i) / 7 + (Math.random() - 0.5);
-    const dist  = 70 + Math.random() * 110;
-    p.textContent = s;
-    p.style.cssText = `left:${cx}px;top:${cy}px;font-size:${16+Math.random()*16}px;animation-duration:${1.2+Math.random()*0.8}s;`;
-    p.style.setProperty('--tx', Math.cos(angle) * dist + 'px');
-    p.style.setProperty('--ty', Math.sin(angle) * dist + 'px');
-    p.style.setProperty('--rot', (Math.random() * 360 - 180) + 'deg');
-    document.body.appendChild(p);
-    setTimeout(() => p.remove(), 2500);
-  });
-}
-
-// ── DAILY CHECKLIST ──
-function todayKey() {
-  // Returns a date string like "2026-02-20" in IST
-  const now = new Date();
-  const ist = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
-  return ist.toISOString().slice(0, 10);
-}
-
-function getChecksStore() {
-  try { return JSON.parse(localStorage.getItem('daily-checks') || '{}'); }
-  catch(e) { return {}; }
-}
-
-function saveChecksStore(store) {
-  try { localStorage.setItem('daily-checks', JSON.stringify(store)); }
-  catch(e) {}
-}
-
-function getTodayChecks() {
-  const store = getChecksStore();
-  return store[todayKey()] || {};
-}
-
-function setCheck(id, value) {
-  const store = getChecksStore();
-  const key   = todayKey();
-  if (!store[key]) store[key] = {};
-  store[key][id] = value;
-  saveChecksStore(store);
-  updateCheckCount();
-}
-
-function setupChecklist() {
-  const container = document.getElementById('checklistItems');
-  const checks    = getTodayChecks();
-
-  CONFIG.checklist.forEach(item => {
-    const div = document.createElement('div');
-    div.className = 'checklist-item' + (checks[item.id] ? ' checked' : '');
-    div.id = 'chk-' + item.id;
-    div.innerHTML = `
-      <div class="check-circle">${checks[item.id] ? '✓' : ''}</div>
-      <span class="check-emoji">${item.emoji}</span>
-      <span class="check-label">${item.label}</span>
-    `;
-    div.onclick = () => toggleCheck(item.id, div);
-    container.appendChild(div);
-  });
-
-  updateCheckCount();
-}
-
-function toggleCheck(id, el) {
-  const isChecked = el.classList.contains('checked');
-  const newVal    = !isChecked;
-
-  el.classList.toggle('checked', newVal);
-  const circle = el.querySelector('.check-circle');
-  circle.textContent = newVal ? '✓' : '';
-
-  if (newVal) {
-    // Little bounce
-    el.style.transform = 'scale(1.03)';
-    setTimeout(() => el.style.transform = '', 200);
-    if (navigator.vibrate) navigator.vibrate(30);
-  }
-
-  setCheck(id, newVal);
-}
-
-function updateCheckCount() {
-  const checks  = getTodayChecks();
-  const total   = CONFIG.checklist.length;
-  const done    = Object.values(checks).filter(Boolean).length;
-  const el      = document.getElementById('checkCount');
-  if (el) {
-    el.textContent = done + ' / ' + total;
-    el.style.background = done === total
-      ? 'rgba(122,68,35,0.15)'
-      : 'rgba(196,135,79,0.12)';
-    el.style.color = done === total ? 'var(--bark)' : 'var(--cinnamon)';
-  }
-}
-
-// ── JOURNAL EMOJIS ──
-const EMOJI_CATEGORIES = [
-  {
-    name: 'Mood',
-    emojis: ['😔','😰','😶','😞','😐','🥲','😤','😩','☀️','🥰'],
-  },
-  {
-    name: 'Physical',
-    emojis: ['😴','🤒','😣','🤯','🥱','💪','🧘'],
-  },
-  {
-    name: 'Love & gratitude',
-    emojis: ['💛','🌸','🫂','🙏','💗','🌿','✨','💌'],
-  },
-  {
-    name: 'Silly & light',
-    emojis: ['😂','🙈','😜','🦋','🌈','🍕','💃','🎉'],
-  },
-];
-
-let selectedEmojis = []; // [{emoji, id}]
-let emojiCounter = 0;
-
-function setupEmojiJournal() {
-  const container = document.getElementById('emojiCategories');
-  EMOJI_CATEGORIES.forEach(cat => {
-    const catDiv = document.createElement('div');
-    catDiv.className = 'emoji-category';
-    catDiv.innerHTML = `<div class="emoji-category-name">${cat.name}</div>`;
-    const row = document.createElement('div');
-    row.className = 'emoji-row';
-    cat.emojis.forEach(emoji => {
-      const btn = document.createElement('button');
-      btn.className = 'emoji-btn';
-      btn.textContent = emoji;
-      btn.setAttribute('data-emoji', emoji);
-      btn.onclick = (e) => toggleEmoji(emoji, btn, e);
-      row.appendChild(btn);
-    });
-    catDiv.appendChild(row);
-    container.appendChild(catDiv);
-  });
-}
-
-function toggleEmoji(emoji, btn, e) {
-  // Particle mini burst
-  const r = btn.getBoundingClientRect();
-  miniParticle(emoji, r.left + r.width/2, r.top + r.height/2);
-
-  // Check if already selected — if so, deselect
-  const existingIdx = selectedEmojis.findIndex(s => s.emoji === emoji);
-  if (existingIdx !== -1) {
-    // Remove from selected
-    const id = selectedEmojis[existingIdx].id;
-    selectedEmojis.splice(existingIdx, 1);
-    btn.classList.remove('selected');
-    const tag = document.getElementById('etag-' + id);
-    if (tag) tag.remove();
-  } else {
-    // Add to selected
-    const id = ++emojiCounter;
-    selectedEmojis.push({ emoji, id });
-    btn.classList.add('selected');
-    addEmojiTag(emoji, id);
-
-    // Show write nudge after first emoji tap
-    const nudge = document.getElementById('writeNudge');
-    nudge.classList.add('show');
-    clearTimeout(window._nudgeT);
-    window._nudgeT = setTimeout(() => nudge.classList.remove('show'), 5000);
-  }
-
-  updateEmojiWrap();
-}
-
-function addEmojiTag(emoji, id) {
-  const wrap = document.getElementById('selectedEmojiWrap');
-  // Remove placeholder label if present
-  const label = wrap.querySelector('.selected-emojis-label');
-  if (label) label.remove();
-
-  const tag = document.createElement('span');
-  tag.className = 'selected-emoji-tag';
-  tag.id = 'etag-' + id;
-  const removeBtn = document.createElement('button');
-    removeBtn.className = 'remove-emoji';
-    removeBtn.textContent = '✕';
-    removeBtn.onclick = () => removeEmojiTag(id, emoji);
-    tag.appendChild(document.createTextNode(emoji + ' '));
-    tag.appendChild(removeBtn);
-    wrap.appendChild(tag);
-}
-
-function removeEmojiTag(id, emoji) {
-  selectedEmojis = selectedEmojis.filter(s => s.id !== id);
-  const tag = document.getElementById('etag-' + id);
-  if (tag) tag.remove();
-  // Unselect the button
-  document.querySelectorAll('.emoji-btn').forEach(b => {
-    if (b.getAttribute('data-emoji') === emoji) b.classList.remove('selected');
-  });
-  updateEmojiWrap();
-}
-
-function updateEmojiWrap() {
-  const wrap = document.getElementById('selectedEmojiWrap');
-  if (selectedEmojis.length === 0 && !wrap.querySelector('.selected-emojis-label')) {
-    const label = document.createElement('span');
-    label.className = 'selected-emojis-label';
-    label.textContent = 'Nothing selected yet — tap any emoji above';
-    wrap.appendChild(label);
-  }
-}
-
-function miniParticle(emoji, cx, cy) {
-  for (let i = 0; i < 4; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    const angle = Math.random() * Math.PI * 2;
-    const dist = 30 + Math.random() * 50;
-    p.textContent = emoji;
-    p.style.cssText = `left:${cx}px;top:${cy}px;font-size:14px;animation-duration:${0.8 + Math.random()*0.4}s;`;
-    p.style.setProperty('--tx', Math.cos(angle) * dist + 'px');
-    p.style.setProperty('--ty', Math.sin(angle) * dist + 'px');
-    p.style.setProperty('--rot', (Math.random() * 180 - 90) + 'deg');
-    document.body.appendChild(p);
-    setTimeout(() => p.remove(), 1400);
-  }
-}
-
-// ── JOURNAL SAVE ──
-async function saveEntry() {
-  const text    = document.getElementById('journalText').value.trim();
-  const emojis  = selectedEmojis.map(s => s.emoji).join(' ');
-
-  // Must have at least emojis OR text
-  if (!text && !emojis) {
-    const wrap = document.getElementById('selectedEmojiWrap');
-    wrap.style.outline = '2px solid #c45050';
-    wrap.style.borderRadius = '12px';
-    const el = document.getElementById('journalText');
-    el.style.borderColor = '#c45050';
-    setTimeout(() => {
-      wrap.style.outline = '';
-      el.style.borderColor = '';
-    }, 1200);
-    showToast('Tap an emoji or write something 🌸');
-    return;
-  }
-
-  const entry = {
-    text:   text || '',
-    emojis: emojis || '',
-    ts: new Date().toISOString(),
-    readable: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' }),
-  };
-
-  let entries = [];
-  try {
-    if (window.storage) {
-      const r = await window.storage.get('journal-entries');
-      entries = r ? JSON.parse(r.value) : [];
-    } else {
-      entries = JSON.parse(localStorage.getItem('journal-entries') || '[]');
-    }
-  } catch(e) {}
-
-  entries.unshift(entry);
-
-  try {
-    if (window.storage) await window.storage.set('journal-entries', JSON.stringify(entries));
-    else localStorage.setItem('journal-entries', JSON.stringify(entries));
-  } catch(e) {}
-
-  // Reset
-  document.getElementById('journalText').value = '';
-  selectedEmojis = [];
-  document.querySelectorAll('.emoji-btn').forEach(b => b.classList.remove('selected'));
-  document.querySelectorAll('.selected-emoji-tag').forEach(t => t.remove());
-  const wrap = document.getElementById('selectedEmojiWrap');
-  if (!wrap.querySelector('.selected-emojis-label')) {
-    const label = document.createElement('span');
-    label.className = 'selected-emojis-label';
-    label.textContent = 'Nothing selected yet — tap any emoji above';
-    wrap.appendChild(label);
-  }
-  document.getElementById('writeNudge').classList.remove('show');
-
-  const toastMsg = text
-    ? 'Sent to Ankita 💛 She’ll love this'
-    : 'Emojis sent to Ankita 🌸';
-  showToast(toastMsg);
-}
-
-function showToast(msg) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 3000);
-}
-
-// ── NAV ──
-function navTo(name, btn) {
-  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById(`screen-${name}`).classList.add('active');
-  if (btn) btn.classList.add('active');
-  stopAudio();
-}
-
-// ── ADMIN ──
-function checkAdmin() {
-  const p = new URLSearchParams(window.location.search).get('admin');
-  if (p === CONFIG.adminPassword) loadAdmin();
-}
-
-async function loadAdmin() {
-  const overlay = document.getElementById('adminOverlay');
-  const body    = document.getElementById('adminBody');
-  overlay.classList.add('show');
-  body.innerHTML = '<div style="color:var(--ink-light);font-size:13px;padding:20px 0">Loading...</div>';
-
-  // ── JOURNAL ENTRIES ──
-  let entries = [];
-  try {
-    if (window.storage) {
-      const r = await window.storage.get('journal-entries');
-      entries = r ? JSON.parse(r.value) : [];
-    } else {
-      entries = JSON.parse(localStorage.getItem('journal-entries') || '[]');
-    }
-  } catch(e) {}
-
-  const journalHTML = entries.length
-    ? entries.map(e => {
-        const hasEmoji = e.emojis && e.emojis.trim();
-        const hasText  = e.text   && e.text.trim();
-        const typeClass = hasEmoji && hasText ? 'both' : hasEmoji ? 'emoji-only' : 'text-only';
-        const typeLabel = hasEmoji && hasText ? '✍️ + emoji' : hasEmoji ? '🎨 emoji mood' : '✍️ written';
-        return `
-        <div class="admin-entry">
-          <div class="admin-entry-meta">
-            <span class="admin-entry-type ${typeClass}">${typeLabel}</span>
-            <span class="admin-time">${e.readable}</span>
-          </div>
-          ${hasEmoji ? '<div class="admin-emojis">' + e.emojis + '</div>' : ''}
-          ${hasText  ? '<div class="admin-text">' + e.text.replace(/</g,'&lt;').replace(/\n/g,'<br>') + '</div>' : ''}
-        </div>`;
-      }).join('')
-    : '<div class="admin-empty" style="padding:24px 0 8px">No journal entries yet 🌸<br>Check back soon.</div>';
-
-  // ── 7-DAY CHECKLIST GRID ──
-  const checksStore = JSON.parse(localStorage.getItem('daily-checks') || '{}');
-
-  // Build last 7 days (today first)
-  const days = [];
-  for (let i = 0; i < 7; i++) {
-    const d = new Date();
-    d.setDate(d.getDate() - i);
-    const ist = new Date(d.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
-    const key = ist.toISOString().slice(0, 10);
-    const label = i === 0 ? 'Today' : ist.toLocaleDateString('en-IN', { weekday: 'short', timeZone: 'Asia/Kolkata' });
-    days.push({ key, label, isToday: i === 0 });
-  }
-
-  // Header row
-  let gridHTML = '<div class="cg-header">Habit</div>';
-  days.forEach(d => {
-    gridHTML += '<div class="cg-day-header' + (d.isToday ? ' today' : '') + '">' + d.label + '</div>';
-  });
-
-  // One row per checklist item
-  CONFIG.checklist.forEach(item => {
-    gridHTML += '<div class="cg-item-label"><span>' + item.emoji + '</span><span>' + item.label + '</span></div>';
-    days.forEach(d => {
-      const dayChecks = checksStore[d.key] || {};
-      const done = dayChecks[item.id] === true;
-      const hasData = Object.keys(dayChecks).length > 0;
-      if (hasData) {
-        gridHTML += '<div class="cg-cell ' + (done ? 'done' : '') + '">' + (done ? '✓' : '·') + '</div>';
-      } else {
-        gridHTML += '<div class="cg-cell na">—</div>';
+    <script>
+      let activeAudio = null;
+
+      // ── STORAGE HELPERS ──
+      async function storeSet(key, val) {
+        try {
+          if (window.storage) {
+            await window.storage.set(key, JSON.stringify(val));
+          } else {
+            localStorage.setItem(key, JSON.stringify(val));
+          }
+        } catch (e) {}
       }
-    });
-  });
 
-  // Count summary per day
-  gridHTML += '<div class="cg-header">Total</div>';
-  days.forEach(d => {
-    const dayChecks = checksStore[d.key] || {};
-    const hasData = Object.keys(dayChecks).length > 0;
-    if (hasData) {
-      const count = Object.values(dayChecks).filter(Boolean).length;
-      const total = CONFIG.checklist.length;
-      gridHTML += '<div class="cg-day-header' + (d.isToday ? ' today' : '') + '" style="font-size:11px;color:var(--cinnamon)">' + count + '/' + total + '</div>';
-    } else {
-      gridHTML += '<div class="cg-day-header" style="opacity:0.3">—</div>';
-    }
-  });
+      async function storeGet(key) {
+        try {
+          if (window.storage) {
+            const r = await window.storage.get(key);
+            return r ? JSON.parse(r.value) : null;
+          } else {
+            const v = localStorage.getItem(key);
+            return v ? JSON.parse(v) : null;
+          }
+        } catch (e) {
+          return null;
+        }
+      }
 
-  body.innerHTML = `
-    <div class="admin-section-title" style="border-top:none;margin-top:0">📓 Journal entries</div>
-    ${journalHTML}
-    <div class="admin-section-title">✅ Daily check-ins — last 7 days</div>
-    <div class="checklist-grid-wrap">
-      <div class="checklist-grid" style="grid-template-columns: minmax(140px,1fr) repeat(7, 36px);">
-        ${gridHTML}
+      // ── INIT ──
+      window.addEventListener('DOMContentLoaded', () => {
+        setupGreeting();
+        setupDate();
+        setupAffirmation();
+        setupMoods();
+        checkAdmin();
+        checkInstallHint();
+      });
+
+      function setupGreeting() {
+        const h = new Date().getHours();
+        document.getElementById('timeGreeting').textContent =
+          h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening';
+      }
+
+      function setupDate() {
+        const d = new Date();
+        const days = [
+          'Sunday',
+          'Monday',
+          'Tuesday',
+          'Wednesday',
+          'Thursday',
+          'Friday',
+          'Saturday',
+        ];
+        const months = [
+          'Jan',
+          'Feb',
+          'Mar',
+          'Apr',
+          'May',
+          'Jun',
+          'Jul',
+          'Aug',
+          'Sep',
+          'Oct',
+          'Nov',
+          'Dec',
+        ];
+        document.getElementById('dateDisplay').innerHTML =
+          `${days[d.getDay()]}<br>${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+      }
+
+      function setupAffirmation() {
+        const day = Math.floor(Date.now() / 86400000);
+        const idx = day % CONFIG.affirmations.length;
+        document.getElementById('affirmText').textContent =
+          CONFIG.affirmations[idx];
+      }
+
+      // ── MOODS ──
+      function setupMoods() {
+        const grid = document.getElementById('moodGrid');
+        CONFIG.moods.forEach((mood, i) => {
+          const tile = document.createElement('button');
+          tile.className = 'mood-tile';
+          tile.innerHTML = `<span class="mood-emoji">${mood.emoji}</span><span class="mood-word">${mood.label}</span>`;
+          tile.onclick = () => selectMood(i, tile);
+          grid.appendChild(tile);
+        });
+      }
+
+      function selectMood(i, tile) {
+        // Deselect all
+        document
+          .querySelectorAll('.mood-tile')
+          .forEach((t) => t.classList.remove('selected'));
+        tile.classList.add('selected');
+
+        // Stop any playing audio
+        if (activeAudio) {
+          activeAudio.pause();
+          activeAudio = null;
+        }
+
+        // Show response
+        renderMoodResponse(CONFIG.moods[i]);
+      }
+
+      function renderMoodResponse(mood) {
+        const container = document.getElementById('moodResponse');
+        container.classList.remove('show');
+        container.innerHTML = '';
+
+        let html = '';
+
+        if (mood.type === 'photo') {
+          const imgHtml = mood.src
+            ? `<img src="${mood.src}" alt="us" />`
+            : `<div style="display:flex;align-items:center;justify-content:center;font-size:80px;width:100%;height:100%;">${mood.photoEmoji}</div>`;
+
+          html = `
+      <div class="photo-response">
+        <div class="photo-response-img">${imgHtml}</div>
+        <div class="photo-response-body">
+          <div class="photo-response-caption">${mood.caption}</div>
+          <div class="photo-response-from">${mood.from}</div>
+        </div>
+      </div>`;
+        } else if (mood.type === 'audio') {
+          const bars = [...Array(8)]
+            .map(() => {
+              const h = 4 + Math.floor(Math.random() * 22);
+              return `<div class="wbar" style="height:${h}px"></div>`;
+            })
+            .join('');
+
+          html = `
+      <div class="audio-response" id="audioCard">
+        <div class="audio-header">
+          <div class="audio-response-label">A message from Ankita</div>
+          <div class="audio-response-title">${mood.title}</div>
+        </div>
+        <div class="audio-player-bar">
+          <button class="audio-play-btn" id="audioPlayBtn" onclick="toggleMoodAudio('${mood.src || ''}', '${mood.duration}')">▶</button>
+          <div class="waveform">${bars}</div>
+          <span class="audio-duration">${mood.duration}</span>
+        </div>
+      </div>`;
+        } else if (mood.type === 'text') {
+          html = `
+      <div class="text-response">
+        <div class="text-response-tag">From Ankita, just for you</div>
+        <span class="text-response-emoji">${mood.emoji2}</span>
+        <div class="text-response-msg">${mood.message}</div>
+        <div class="text-response-from">— Ankita 🌸</div>
+      </div>`;
+        }
+
+        container.innerHTML = html;
+
+        // Trigger animation
+        void container.offsetWidth;
+        container.classList.add('show');
+
+        // Scroll into view gently
+        setTimeout(
+          () =>
+            container.scrollIntoView({ behavior: 'smooth', block: 'nearest' }),
+          100,
+        );
+      }
+
+      function toggleMoodAudio(src, duration) {
+        const card = document.getElementById('audioCard');
+        const btn = document.getElementById('audioPlayBtn');
+
+        if (activeAudio) {
+          activeAudio.pause();
+          card && card.classList.remove('playing');
+          btn && (btn.textContent = '▶');
+          const wasPlaying = activeAudio._playing;
+          activeAudio = null;
+          if (wasPlaying) return;
+        }
+
+        if (!src) {
+          // Demo mode: animate for 4s
+          card && card.classList.add('playing');
+          btn && (btn.textContent = '⏸');
+          const timer = setTimeout(() => {
+            card && card.classList.remove('playing');
+            btn && (btn.textContent = '▶');
+            activeAudio = null;
+          }, 4000);
+          activeAudio = { pause: () => clearTimeout(timer), _playing: true };
+          return;
+        }
+
+        const audio = new Audio(src);
+        audio._playing = true;
+        activeAudio = audio;
+        card && card.classList.add('playing');
+        btn && (btn.textContent = '⏸');
+        audio.play();
+        audio.onended = () => {
+          card && card.classList.remove('playing');
+          btn && (btn.textContent = '▶');
+          activeAudio = null;
+        };
+      }
+
+      // ── HUG ──
+      function sendHug(e) {
+        const btn = e.currentTarget;
+        const rect = btn.getBoundingClientRect();
+        burstParticles(rect.left + rect.width / 2, rect.top + rect.height / 2);
+        if (navigator.vibrate) navigator.vibrate([30, 20, 40, 20, 30]);
+
+        const msg =
+          CONFIG.hugMessages[
+            Math.floor(Math.random() * CONFIG.hugMessages.length)
+          ];
+        const el = document.getElementById('hugResponse');
+        el.textContent = msg;
+        el.classList.remove('show');
+        void el.offsetWidth;
+        el.classList.add('show');
+        clearTimeout(window._hugT);
+        window._hugT = setTimeout(() => el.classList.remove('show'), 6000);
+      }
+
+      function burstParticles(cx, cy) {
+        ['🌸', '💛', '✨', '🫂', '💗', '🌿', '💫'].forEach((s, i) => {
+          const p = document.createElement('div');
+          p.className = 'particle';
+          const angle = (Math.PI * 2 * i) / 7 + (Math.random() - 0.5);
+          const dist = 70 + Math.random() * 110;
+          p.textContent = s;
+          p.style.cssText = `left:${cx}px;top:${cy}px;font-size:${16 + Math.random() * 16}px;animation-duration:${1.2 + Math.random() * 0.8}s;`;
+          p.style.setProperty('--tx', Math.cos(angle) * dist + 'px');
+          p.style.setProperty('--ty', Math.sin(angle) * dist + 'px');
+          p.style.setProperty('--rot', Math.random() * 360 - 180 + 'deg');
+          document.body.appendChild(p);
+          setTimeout(() => p.remove(), 2500);
+        });
+      }
+
+      // ── JOURNAL ──
+      async function saveEntry() {
+        const text = document.getElementById('journalText').value.trim();
+        if (!text) {
+          const el = document.getElementById('journalText');
+          el.style.borderColor = '#c45050';
+          setTimeout(() => (el.style.borderColor = ''), 1200);
+          return;
+        }
+
+        const entry = {
+          text,
+          ts: new Date().toISOString(),
+          readable: new Date().toLocaleString('en-IN', {
+            timeZone: 'Asia/Kolkata',
+            dateStyle: 'medium',
+            timeStyle: 'short',
+          }),
+        };
+
+        let entries = (await storeGet('journal-entries')) || [];
+        entries.unshift(entry);
+        await storeSet('journal-entries', entries);
+
+        document.getElementById('journalText').value = '';
+        showToast('Saved 💛 Ankita will read this');
+      }
+
+      function showToast(msg) {
+        const t = document.getElementById('toast');
+        t.textContent = msg;
+        t.classList.add('show');
+        setTimeout(() => t.classList.remove('show'), 3000);
+      }
+
+      // ── NAV ──
+      function navTo(name, btn) {
+        document
+          .querySelectorAll('.screen')
+          .forEach((s) => s.classList.remove('active'));
+        document
+          .querySelectorAll('.nav-btn')
+          .forEach((b) => b.classList.remove('active'));
+        document.getElementById(`screen-${name}`).classList.add('active');
+        if (btn) btn.classList.add('active');
+        if (activeAudio) {
+          activeAudio.pause();
+          activeAudio = null;
+        }
+      }
+
+      // ── ADMIN ──
+      function checkAdmin() {
+        const p = new URLSearchParams(window.location.search).get('admin');
+        if (p === CONFIG.adminPassword) loadAdmin();
+      }
+
+      async function loadAdmin() {
+        const overlay = document.getElementById('adminOverlay');
+        const body = document.getElementById('adminBody');
+        overlay.classList.add('show');
+
+        const entries = (await storeGet('journal-entries')) || [];
+
+        if (!entries.length) {
+          body.innerHTML = `<div class="admin-empty">She hasn't written anything yet 🌸<br><br>Check back soon — she'll get there.</div>`;
+          return;
+        }
+
+        body.innerHTML = entries
+          .map(
+            (e) => `
+    <div class="admin-entry">
+      <div class="admin-entry-meta">
+        <span class="admin-mood">✍️ Journal entry</span>
+        <span class="admin-time">${e.readable}</span>
       </div>
+      <div class="admin-text">${e.text.replace(/</g, '&lt;').replace(/\n/g, '<br>')}</div>
     </div>
-    <div style="height:24px"></div>
-  `;
-}
+  `,
+          )
+          .join('');
+      }
 
-function closeAdmin() {
-  document.getElementById('adminOverlay').classList.remove('show');
-  const url = new URL(window.location);
-  url.searchParams.delete('admin');
-  window.history.replaceState({}, '', url);
-}
+      function closeAdmin() {
+        document.getElementById('adminOverlay').classList.remove('show');
+        const url = new URL(window.location);
+        url.searchParams.delete('admin');
+        window.history.replaceState({}, '', url);
+      }
 
-// ── INSTALL HINT ──
-function checkInstallHint() {
-  const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
-  const standalone = window.navigator.standalone || window.matchMedia('(display-mode: standalone)').matches;
-  if (isIOS && !standalone && !localStorage.getItem('installDismissed')) {
-    document.getElementById('installHint').classList.add('show');
-    document.getElementById('dismissHint').classList.add('show');
-  }
-}
+      // ── iOS INSTALL HINT ──
+      function checkInstallHint() {
+        const isIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
+        const standalone =
+          window.navigator.standalone ||
+          window.matchMedia('(display-mode: standalone)').matches;
+        const dismissed = localStorage.getItem('installDismissed');
+        if (isIOS && !standalone && !dismissed) {
+          document.getElementById('installHint').classList.add('show');
+          document.getElementById('dismissHint').classList.add('show');
+        }
+      }
 
-function dismissInstall() {
-  localStorage.setItem('installDismissed', '1');
-  document.getElementById('installHint').classList.remove('show');
-  document.getElementById('dismissHint').classList.remove('show');
-}
-</script>
-
-</body>
+      function dismissInstall() {
+        localStorage.setItem('installDismissed', '1');
+        document.getElementById('installHint').classList.remove('show');
+        document.getElementById('dismissHint').classList.remove('show');
+      }
+    </script>
+  </body>
 </html>
